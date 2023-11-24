@@ -1,0 +1,20 @@
+import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
+import test from "./test";
+import React from "react";
+import { App } from "./App";
+import { BrowserRouter } from "react-router-dom";
+import ThemeProvider from "./theme/ThemeProvider";
+
+test();
+
+const domNode = document.getElementById("root");
+const root = createRoot(domNode);
+
+root.render(
+  <BrowserRouter>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>
+);
