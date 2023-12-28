@@ -1,0 +1,24 @@
+.Button {
+    // border-radius: .5rem;
+    // border: unset;
+    // padding: .25rem;
+    cursor: pointer;
+}
+
+.clear {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.dark {
+    background-color: #333;
+    color: red;
+    border:20px;
+}
+
+.button > svg {
+    margin-left: .5rem;
+}
