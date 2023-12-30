@@ -5,9 +5,9 @@ import { routeConfig } from 'shared/config/routerConfig/routerConfig';
 const AppRouter = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-            {routeConfig.map(({element, path}) => <Route path={path} element={element}/>)}
-        </Routes>
+            <Routes>
+                {routeConfig.map(({element, path}) => <Route path={path} element={(<div className='page-wrapper'>{element}</div>)}/>)}
+            </Routes>
       </Suspense>
     );
 };

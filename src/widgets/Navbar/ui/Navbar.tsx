@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import cls from './Navbar.module.scss';
-import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkAccent } from 'shared/ui/AppLink/AppLink';
-import { ThemeSwitch } from 'widgets/ThemeSwitch';
-import { navbarConfig, routeConfig } from 'shared/config/routerConfig/routerConfig';
+import { navbarConfig } from 'shared/config/routerConfig/routerConfig';
 
 interface INavbarProps {
     className?: string;
@@ -24,7 +22,6 @@ export const Navbar = ({className}: INavbarProps) => {
             <div className={cls.logo}>
 
             </div>
-            <ThemeSwitch />
             <div className={cls.links}>
                 {navbarConfig.map(({to, label}) => {
                     return <AppLink 
