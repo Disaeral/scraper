@@ -28,7 +28,6 @@ export const AppLink: FC<IAppLinkProps> = (props) => {
     accent = AppLinkAccent.PRIMARY,
     ...otherProps
   } = props;
-  console.log(otherProps);
 
   return (
     <Link

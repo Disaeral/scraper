@@ -9,12 +9,8 @@ interface IThemeProviderProps {
 } 
 
 const ThemeProvider: FC<IThemeProviderProps> = ({children}) => {
-
     const [theme, setTheme] = useState<Theme>(defaultTheme);
-
-  
-
-  const defaultProps = useMemo(() => (
+    const defaultProps = useMemo(() => (
     {
         theme,
         setTheme

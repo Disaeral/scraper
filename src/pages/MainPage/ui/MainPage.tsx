@@ -1,9 +1,13 @@
-import React from 'react';
+import { SearchPostsInput } from 'features/SearchPostsInput';
+import { Card } from 'shared/ui/Card/Card';
+import cls from "./MainPage.module.scss"
 
 const MainPage = () => {
     return (
         <div>
-            home page
+            <Card className={cls.SearchFieldCard}>
+                <SearchPostsInput />
+            </Card>
         </div>
     );
 };

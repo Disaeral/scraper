@@ -15,8 +15,15 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     
   }
 
-  const imgLoader = {
-    
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
   }
 
     // const onemoresvgLoader = {
@@ -47,5 +54,5 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       "sass-loader",
     ],
   };
-  return [typescript, cssLoaders, svgLoader];
+  return [babelLoader, typescript, cssLoaders, svgLoader, ];
 }
