@@ -21,7 +21,18 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     use: {
       loader: "babel-loader",
       options: {
-        presets: ['@babel/preset-env']
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            "i18next-extract", 
+            {
+              locales: ['ru', 'en', 'jp'],
+              outputPath: "locales/{{locale}}/{{ns}}.json"
+              // keyAsDefaultValue: true,
+            }
+          ],
+          // […] your other plugins […]
+        ]
       }
     }
   }
