@@ -1,1 +1,1 @@
-export {  SearchPostsInput  } from 'features/SearchPostsInput/ui/SearchPostsInput';
+export { SearchPostsInput } from 'features/SearchPostsInput/ui/SearchPostsInput'

@@ -1,20 +1,20 @@
-import { ChangeEvent, useState } from 'react';
-import cls from './SearchPostsInput.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { type ChangeEvent, useState } from 'react'
+import cls from './SearchPostsInput.module.scss'
+import { classNames } from 'shared/lib/classNames/classNames'
 
 interface ISearchPostsProps {
-    className?: string;
+  className?: string
 }
 
-export const SearchPostsInput = ({className}: ISearchPostsProps) => {
-    const [query, setQuery] = useState("");
-    const handleInput = (e:ChangeEvent<HTMLInputElement>) => {
-        setQuery(e.target.value)
-    }
+export const SearchPostsInput = ({ className }: ISearchPostsProps): JSX.Element => {
+  const [_, setQuery] = useState('')
+  const handleInput = (e: ChangeEvent<HTMLInputElement>): void => {
+    setQuery(e.target.value)
+  }
 
-    return (
-        <div className={classNames(cls.SearchPosts, [className])}>
-            <input type="text" onChange={handleInput}/>
-        </div>
-    );
-};
+  return (
+      <div className={classNames(cls.SearchPosts, [className])}>
+          <input type="text" onChange={handleInput}/>
+      </div>
+  )
+}

@@ -1,43 +1,41 @@
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
+import { MainPage } from 'pages/MainPage'
+import { AboutPage } from 'pages/AboutPage'
 
-import { RouteProps } from "react-router-dom";
+import { type RouteProps } from 'react-router-dom'
 
 enum AppRouteNames {
-    MAIN='main',
-    ABOUT='about',
+  MAIN = 'main',
+  ABOUT = 'about',
 }
 
-type NavbarPath = {
-    to: string;
-    label: string;
+interface NavbarPath {
+  to: string
+  label: string
 }
-
-
 
 const RoutePath: Record<AppRouteNames, string> = {
-    [AppRouteNames.ABOUT]: '/about',
-    [AppRouteNames.MAIN]: ''
+  [AppRouteNames.ABOUT]: '/about',
+  [AppRouteNames.MAIN]: ''
 }
 
-export const navbarConfig: Array<NavbarPath> = [
-    {
-        to: RoutePath.main,
-        label: 'Main Page',
-    },
-    {
-        to: RoutePath.about,
-        label: 'About Us',
-    }
-]  
+export const navbarConfig: NavbarPath[] = [
+  {
+    to: RoutePath.main,
+    label: 'Main Page'
+  },
+  {
+    to: RoutePath.about,
+    label: 'About Us'
+  }
+]
 
-export const routeConfig: Array<RouteProps> = [
-    {
-        path: RoutePath.main,
-        element: <MainPage />,
-    },
-    {
-        path: RoutePath.about,
-        element: <AboutPage />,
-    }
-]  
+export const routeConfig: RouteProps[] = [
+  {
+    path: RoutePath.main,
+    element: <MainPage />
+  },
+  {
+    path: RoutePath.about,
+    element: <AboutPage />
+  }
+]

@@ -1,22 +1,22 @@
-import { FC, ReactNode } from "react";
-import cls from "./AppLink.module.scss";
-import { Link, LinkProps } from "react-router-dom";
-import { classNames } from "shared/lib/classNames/classNames";
+import { type FC, type ReactNode } from 'react'
+import cls from './AppLink.module.scss'
+import { Link, type LinkProps } from 'react-router-dom'
+import { classNames } from 'shared/lib/classNames/classNames'
 
 interface IAppLinkProps extends LinkProps {
-  className?: string;
-  children?: ReactNode;
-  accent?: AppLinkAccent;
-  isActive?: boolean;
+  className?: string
+  children?: ReactNode
+  accent?: AppLinkAccent
+  isActive?: boolean
 }
 
 export enum AppLinkAccent {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
 }
 
 export enum AppLinkModifiers {
-  ACTIVE = "active",
+  ACTIVE = 'active',
 }
 
 export const AppLink: FC<IAppLinkProps> = (props) => {
@@ -27,17 +27,17 @@ export const AppLink: FC<IAppLinkProps> = (props) => {
     isActive,
     accent = AppLinkAccent.PRIMARY,
     ...otherProps
-  } = props;
+  } = props
 
   return (
-    <Link
-      to={to}
-      className={classNames(cls.applink, [className, cls[accent]], {
-        [cls[AppLinkModifiers.ACTIVE]]: isActive,
-      })}
-      {...otherProps}
-    >
-      {children}
-    </Link>
-  );
-};
+      <Link
+            to={to}
+            className={classNames(cls.applink, [className, cls[accent]], {
+              [cls[AppLinkModifiers.ACTIVE]]: isActive
+            })}
+            {...otherProps}
+        >
+          {children}
+      </Link>
+  )
+}
