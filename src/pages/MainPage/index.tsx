@@ -1,3 +1,3 @@
 export {
-  MainPageLazy as MainPage
+    MainPageLazy as MainPage
 } from './ui/MainPage.lazy'

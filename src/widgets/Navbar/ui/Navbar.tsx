@@ -6,37 +6,37 @@ import { navbarConfig } from 'shared/config/routerConfig/routerConfig'
 import { SidebarToggleBtn } from 'widgets/SidebarToggleBtn'
 
 interface INavbarProps {
-  className?: string
-  activeLink?: string
+    className?: string
+    activeLink?: string
 }
 
 export const Navbar = ({ className }: INavbarProps): JSX.Element => {
-  const [activeLink, setActiveLink] = useState('')
+    const [activeLink, setActiveLink] = useState('')
 
-  const handleLinkClick = (link: string): void => {
-    setActiveLink(link)
-  }
+    const handleLinkClick = (link: string): void => {
+        setActiveLink(link)
+    }
 
-  return (
-      <nav className={classNames(cls.navbar, [className])}>
-          <SidebarToggleBtn />
-          <div className={cls.logo}>
+    return (
+        <nav className={classNames(cls.navbar, [className])}>
+            <SidebarToggleBtn />
+            <div className={cls.logo}>
 
-          </div>
-          <div className={cls.links}>
-              {navbarConfig.map(({ to, label }, id) => {
-                return <AppLink
+            </div>
+            <div className={cls.links}>
+                {navbarConfig.map(({ to, label }, id) => {
+                    return <AppLink
                         key={id + to + Math.random()}
                         to={to}
                         accent={AppLinkAccent.SECONDARY}
                         isActive={to === activeLink}
                         onClick={() => { handleLinkClick(to) }}
                     >
-                    {label}
-                </AppLink>
-              })}
-          </div>
+                        {label}
+                    </AppLink>
+                })}
+            </div>
 
-      </nav>
-  )
+        </nav>
+    )
 }

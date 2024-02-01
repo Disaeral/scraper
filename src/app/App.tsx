@@ -8,17 +8,17 @@ import 'shared/config/i18n/i18nConfig'
 import { Suspense } from 'react'
 
 export const App = (): JSX.Element => {
-  const { theme } = useTheme()
+    const { theme } = useTheme()
 
-  return (
-      <div className={classNames('app', [theme], {})}>
-          <Suspense fallback={'Loading...'}>
-              <Navbar />
-              <div className={'page-content'}>
-                  <Sidebar />
-                  <AppRouter />
-              </div>
-          </Suspense>
-      </div>
-  )
+    return (
+        <div className={classNames('app', [theme], {})}>
+            <Suspense fallback={'Loading...'}>
+                <Navbar />
+                <div className={'page-content'}>
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
+        </div>
+    )
 }

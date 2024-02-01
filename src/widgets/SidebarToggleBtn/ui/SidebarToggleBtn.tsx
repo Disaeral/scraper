@@ -4,20 +4,21 @@ import { Button } from 'shared/ui/Button/Button'
 import { useSidebarToggle } from '../lib/useSidebarToggle'
 
 interface ISidebarToggleBtnProps {
-  className?: string
+    className?: string
 }
 
 export const SidebarToggleBtn = ({ className }: ISidebarToggleBtnProps): JSX.Element => {
-  const { _, toggleCollapsed } = useSidebarToggle()
-  const handleSidebarToggle = (): void => {
-    if (toggleCollapsed !== undefined) {
-      toggleCollapsed()
-    }
-  }
+    const { toggleCollapsed } = useSidebarToggle()
 
-  return (
-      <div className={classNames(cls.SidebarToggleBtn, [className ?? ''])}>
-          <Button onClick={handleSidebarToggle}>toggle</Button>
-      </div>
-  )
+    const handleSidebarToggle = (): void => {
+        if (toggleCollapsed !== undefined) {
+            toggleCollapsed()
+        }
+    }
+
+    return (
+        <div className={classNames(cls.SidebarToggleBtn, [className ?? ''])}>
+            <Button onClick={handleSidebarToggle}>toggle</Button>
+        </div>
+    )
 }
