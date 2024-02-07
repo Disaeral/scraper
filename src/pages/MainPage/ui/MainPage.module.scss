@@ -1,6 +1,8 @@
-.SearchFieldCard {
-    height: calc( 100vh - var(--navbar-height) );
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.OneViewPort {
+    height: calc(100vh - var(--navbar-height));
+}
+
+.SecondViewPort {
+    height: 100vh;
+    background-color: var(--inverted-bg-color);
 }

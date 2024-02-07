@@ -4,10 +4,9 @@ import cls from './MainPage.module.scss'
 
 const MainPage = (): JSX.Element => {
     return (
-        <div>
-            <Card className={cls.SearchFieldCard}>
-                <SearchPostsInput />
-            </Card>
+        <div className={cls.MainWrapper}>
+            <Card className={cls.OneViewPort} />
+            <Card className={cls.SecondViewPort} />
         </div>
     )
 }

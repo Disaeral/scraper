@@ -1,0 +1,26 @@
+@import "mixins.scss";
+
+.Input {
+    &:focus {
+        border: unset;
+        outline: none;
+    }
+    border: unset;
+    padding: .2rem;
+    width:80%;
+    // 576px window width and more
+    @include md {
+        padding: .1rem;
+        width: 50vw;
+    }
+    @include xl {
+        width: 20vw;
+    }
+}
+
+.SearchPosts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

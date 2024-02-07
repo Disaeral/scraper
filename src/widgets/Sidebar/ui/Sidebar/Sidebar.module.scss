@@ -1,20 +1,37 @@
+@import "mixins.scss";
+
 .Sidebar {
     height: calc( 100vh - var(--navbar-height) );
     background-color: var(--inverted-bg-color);
     width: var(--sidebar-width);
     transition: width .3s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
+    @include md {
+        width: 300px;
+    }
+    
 }
 
 .Sidebar-wrapper {
-    position: absolute;
+    box-sizing: border-box;
+    border: 5px dashed yellowgreen;
+    position: fixed;
     top: var(--navbar-height);
     left: 0;
     transition: all .4s ease-in-out;
+    @include xl {
+        display: block;
+    }
 }
 
 .Sidebar-wrapper.collapsed{
     left: -400px;
+    @include md {
+        left: -300px;
+    }
+    @include xl {
+        left: 0;
+    }
 }
 
 // .collapsed {

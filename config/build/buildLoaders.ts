@@ -57,7 +57,14 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
                 }
             },
             // Compiles Sass to CSS
-            'sass-loader'
+            {
+                loader: 'sass-loader',
+                options: {
+                    sassOptions: {
+                        includePaths: [options.paths.scssMixins]
+                    }
+                }
+            }
         ]
     }
     return [babelLoader, typescript, cssLoaders, svgLoader]

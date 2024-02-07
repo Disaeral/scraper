@@ -1,0 +1,7 @@
+@import "mixins.scss";
+
+.SidebarToggleBtn {
+    @include xl {
+        display: none;
+    }
+}

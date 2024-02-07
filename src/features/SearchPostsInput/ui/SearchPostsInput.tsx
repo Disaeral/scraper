@@ -14,7 +14,7 @@ export const SearchPostsInput = ({ className }: ISearchPostsProps): JSX.Element 
 
     return (
         <div className={classNames(cls.SearchPosts, [className])}>
-            <input type="text" onChange={handleInput}/>
+            <input type="text" onChange={handleInput} className={classNames(cls.Input)}/><Button>{'search'}</Button>
         </div>
     )
 }

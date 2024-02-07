@@ -1,13 +1,28 @@
 .navbar {
+    z-index: 1;
     width: 100%;
     height: var(--navbar-height);
     display: flex;
     align-items: center;
     background-color: transparent;
     padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    transition: background-color .3s ease-in-out;
 }
 
 .links {
-    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.logo {
+    height: 4em;
+}
+
+.scrolled {
+    background-color: var(--inverted-primary-color);
+    color: var(--secondary-color);
     
 }
