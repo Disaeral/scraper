@@ -1,5 +1,6 @@
 import { type BuildOptions } from './types/config'
 import type webpack from 'webpack'
+import path from 'path'
 
 export function buildResolvers (options: BuildOptions): webpack.ResolveOptions {
     return {
@@ -8,7 +9,9 @@ export function buildResolvers (options: BuildOptions): webpack.ResolveOptions {
         modules: [
             options.paths.src, 'node_modules'
         ],
-        alias: {},
+        alias: {
+            images: options.paths.images
+        },
         mainFiles: ['index']
     }
 }

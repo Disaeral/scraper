@@ -9,7 +9,8 @@ export default (env: BuildEnv): webpack.Configuration => {
         build: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
         src: path.resolve(__dirname, 'src'),
-        scssMixins: path.resolve(__dirname, 'src', 'app', 'styles', 'variables')
+        scssMixins: path.resolve(__dirname, 'src', 'app', 'styles', 'variables'),
+        images: path.resolve(__dirname, 'src', 'shared', 'assets', 'images')
     }
 
     const mode = env.mode ?? 'development'

@@ -1,6 +1,7 @@
 import { type ChangeEvent, useState } from 'react'
 import cls from './SearchPostsInput.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
+import { Button } from 'shared/ui/Button/Button'
 
 interface ISearchPostsProps {
     className?: string

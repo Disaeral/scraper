@@ -17,14 +17,20 @@ export const Navbar = ({ className }: INavbarProps): JSX.Element => {
     const [activeLink, setActiveLink] = useState('')
     const [scrolled, setScrolled] = useState(false)
 
-    const handleScroll = (): void => {
+    const handleScroll = useDebouncedCallback(() => {
         if (window.scrollY > 100) {
             setScrolled(true)
         } else {
             setScrolled(false)
         }
-    }
-    onscroll = useDebouncedCallback(handleScroll, 200)
+    })
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     const handleLinkClick = (link: string): void => {
         setActiveLink(link)
