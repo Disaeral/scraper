@@ -13,6 +13,7 @@
 }
 
 .Sidebar-wrapper {
+    z-index: 1000;
     box-sizing: border-box;
     border: 5px dashed yellowgreen;
     position: fixed;
@@ -20,15 +21,12 @@
     left: 0;
     transition: all .4s ease-in-out;
     @include xl {
-        display: block;
+        display: none;
     }
 }
 
 .Sidebar-wrapper.collapsed{
     left: -400px;
-    @include md {
-        left: -300px;
-    }
     @include xl {
         left: 0;
     }

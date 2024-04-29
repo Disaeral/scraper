@@ -2,6 +2,7 @@ import { StartBtn } from 'widgets/StartBtn'
 import cls from './StartScreen.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useState } from 'react'
+import { SearchPostsInput } from 'features/SearchPostsInput'
 
 interface IStartScreenProps {
     className?: string
@@ -14,11 +15,17 @@ export const StartScreen = ({ className }: IStartScreenProps): JSX.Element => {
         setStarted(!started)
     }
     return (
-        <div className={classNames(cls.StartScreen, [className])}>
-            <div className={classNames('', [], { [cls.ImageContainer]: started })}>
-                <div className={classNames(cls.content)}>
-                    {started ? 2 : 1 }
-                    <StartBtn clickHandler={handleStartClick} />
+        <div className={classNames(cls.StartScreen, [className], { [cls.started]: started })}>
+            <div className={classNames(cls.content)}>
+                {started && <SearchPostsInput /> }
+                <StartBtn clickHandler={handleStartClick} />
+                <div className={classNames(cls.squares)}>
+                    <div className={classNames(cls.square, [], { [cls.toggled]: started })}>
+                        <div className={classNames(cls.squareBackground)}></div>
+                    </div>
+                    <div className={classNames(cls.square, [], { [cls.toggled]: started })}>
+                        <div className={classNames(cls.squareBackground)}></div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,30 +1,93 @@
+@import "mixins.scss";
+
 .StartScreen {
     height: calc(100vh - var(--navbar-height));
-    transition: all 2s;
-    background-image: transparent;    
-}
-
-.ImageContainer {
-    background-image: url('~images/pngtest.png');
-    object-fit: fill;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &.started::after {
+        transform: scale(1.2) rotate(6deg);
+    }
     &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
-    left: 0;
-    background-color: rgba(255, 0, 0, .4);
-}
+        transition: all 0.3s ease-in-out;
+        transform: scale(1) rotate(0);
+        background-image: url("~images/pngtest.png");
+        object-fit: contain;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &::before {
+        content: "";
+        background: linear-gradient(49deg, var(--pink-accent) 0, #23242b 80%);
+        opacity: 0.8;
+        z-index: 1;
+    }
+    &::before,
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    // &.started {
+    //     position: relative;
+    //     &::after {
+    //         content: "";
+    //         display: block;
+    //         width: 100%;
+    //         height: 100%;
+    //         position: absolute;
+    //         top:0;
+    //         left: 0;
+    //         background-color: rgba(255, 0, 0, .4);
+    //     }
+    // }
 }
 
 .content {
-    position: absolute;
-    z-index: 1;
+    z-index: 5;
 }
+
+@include xl {
+    .squares {
+        width: 100%;
+        & > .square {
+            overflow: hidden;
+            aspect-ratio: 1;
+            background-color: #23242bbb;
+            position: absolute;
+            transition: all 0.4s ease;
+            width: 0vw;
+            &:nth-child(1) {
+                left: -15vw;
+                bottom: 0;
+            }
+            &:nth-child(2) {
+                right: -15vw;
+                top: 0;
+            }
+            &:nth-child(1).toggled,
+            &:nth-child(2).toggled {
+                width: calc((70vw - var(--sidebar-width)) / 3);
+                transform: skew(45deg) scale(1);
+            }
+        }
+    }
+    .squareBackground {
+        position: absolute;
+        background-size: 7%;
+        background-position: 50%;
+        top: -50%;
+        left: -50%;
+        width: 250%;
+        height: 200%;
+        transform: skew(-45deg) rotate(45deg);
+        background-image: url(https://cupcake.yearin.lol/cupcake/2023/home/2023.webp);
+    }
+}
+

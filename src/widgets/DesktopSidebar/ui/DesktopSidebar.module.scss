@@ -1,0 +1,9 @@
+@import "mixins.scss";
+
+.DesktopSidebar {
+    display: none;
+    @include xl {
+        display: block;
+        width: var(--sidebar-width);
+    }
+}
