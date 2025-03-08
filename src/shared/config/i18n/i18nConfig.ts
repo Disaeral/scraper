@@ -4,11 +4,11 @@ import { initReactI18next } from 'react-i18next'
 import Backend from 'i18next-http-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
-import '../../../../public/locales/en/translation.json'
-import '../../../../public/locales/en/about.json'
+import '../../../../locales/en/translation.json?url'
+import '../../../../locales/en/about.json?url'
 
-import '../../../../public/locales/jp/translation.json'
-import '../../../../public/locales/jp/about.json'
+import '../../../../locales/jp/translation.json?url'
+import '../../../../locales/jp/about.json?url'
 
 // don't want to use this?
 // have a look at the Quick start guide
@@ -28,7 +28,7 @@ i18n
 // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         fallbackLng: 'en',
-        debug: _IS_DEV_, // isDev
+        debug: true, // isDev
         interpolation: {
             escapeValue: false // not needed for react as it escapes by default
         }

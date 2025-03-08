@@ -1,5 +1,3 @@
-@import "mixins.scss";
-
 .Sidebar {
     height: calc( 100vh - var(--navbar-height) );
     background-color: var(--inverted-bg-color);

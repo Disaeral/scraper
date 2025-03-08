@@ -13,14 +13,10 @@ export const App = (): JSX.Element => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1200)
     useEffect(() => {
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1200) {
-                setIsDesktop(true)
-            } else {
-                setIsDesktop(false)
-            }
+            setIsDesktop(window.innerWidth >= 1200)
         })
     }, [])
-
+    console.log('is it workkin...')
     return (
         <div className={classNames('app', [theme], {})}>
             <Suspense fallback={'Loading...'}>

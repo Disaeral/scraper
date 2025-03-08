@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { AppLink, AppLinkAccent } from 'shared/ui/AppLink/AppLink'
 import { navbarConfig } from 'shared/config/routerConfig/routerConfig'
 import { SidebarToggleBtn } from 'widgets/SidebarToggleBtn'
-import CastleIcon from 'shared/assets/icons/castle.svg'
+import CastleIcon from 'shared/assets/icons/castle.svg?react'
 import { useDebouncedCallback } from 'shared/lib/useDebounce/useDebounce'
 
 interface INavbarProps {
